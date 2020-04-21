@@ -31,6 +31,16 @@ TEST(matrix, reassign_to_init_value)
 	matrix[100][100] = -1;
 	ASSERT_EQ(matrix.size(), 0);
 }
+TEST(matrix, 3D_matrix)
+{
+    Matrix<int, 2, 3> matrix;
+    matrix[100][100][10] = 42;
+    ASSERT_EQ(matrix[100][100][10], 42);
+    ASSERT_EQ(matrix.size(), 1);
+    ASSERT_EQ(matrix[100][100][11], 2);
+    matrix[100][100][10] = 2;
+    ASSERT_EQ(matrix.size(), 0);
+}
 
 
 
